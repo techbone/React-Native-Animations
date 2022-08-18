@@ -1,20 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Feather } from "@expo/vector-icons";
+import * as React from "react";
+import { StyleSheet, View, Text } from "react-native";
 
-export default function App() {
+const _color = "#6E01EF";
+const _size = 100;
+
+const WavyThingy = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View
+      style={{
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <View style={[styles.dot, styles.center]}>
+        {/* {[...Array(3).keys()].map} */}
+        <Feather name="phone-outgoing" size={32} color="#fff" />
+      </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  dot: {
+    width: _size,
+    height: _size,
+    borderRadius: _size,
+    backgroundColor: _color,
+  },
+  center: {
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
+
+export default WavyThingy;
