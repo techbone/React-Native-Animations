@@ -15,7 +15,12 @@ const WavyThingy = () => {
       }}
     >
       <View style={[styles.dot, styles.center]}>
-        {/* {[...Array(3).keys()].map} */}
+        {[...Array(3).keys()].map((index) => {
+          <View
+            key={index}
+            style={[StyleSheet.absoluteFillObject, styles.dot]}
+          />;
+        })}
         <Feather name="phone-outgoing" size={32} color="#fff" />
       </View>
     </View>
